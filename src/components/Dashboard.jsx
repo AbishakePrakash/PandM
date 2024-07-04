@@ -1,6 +1,7 @@
 import { Button, Grid, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import logo from "../../public/pandm.png";
+import movers from "../assets/banneBg.jpg";
 
 const menuItems = [
   { id: 1, menu: "HOME" },
@@ -17,14 +18,17 @@ const Dashboard = () => {
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
-          backgroundColor: "aliceblue",
+          backgroundImage: `url("../assets/banneBg.jpg")`,
           height: 100,
+          backgroundSize: "cover", // Ensures image fills the container
+          backgroundRepeat: "no-repeat", // Prevents image tiling
           border: "1px solid black",
           borderRadius: 5,
-          // m: 3,
         }}
       >
-        <Grid sx={{ width: 240 }}>
+        {/* <img src="../assets/banneBg.jpg" alt="banner" width={60} /> */}
+
+        <Grid sx={{ width: 240, backgroundColor: "inherit" }}>
           <img
             src={logo}
             alt="img"
@@ -37,6 +41,7 @@ const Dashboard = () => {
             px: "20vw",
             display: "flex",
             justifyContent: "space-between",
+            backgroundColor: "inherit",
           }}
         >
           {menuItems &&
@@ -46,7 +51,7 @@ const Dashboard = () => {
               </Grid>
             ))}
         </Grid>
-        <Grid sx={{ width: 240 }}>
+        <Grid sx={{ width: 240, backgroundColor: "inherit" }}>
           <Button sx={{ margin: 1 }} color="success" variant="contained">
             SIGN IN
           </Button>
